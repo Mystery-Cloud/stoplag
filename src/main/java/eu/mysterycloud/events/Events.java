@@ -1,5 +1,6 @@
 package eu.mysterycloud.events;
 
+import org.bukkit.Material;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
@@ -58,6 +59,13 @@ public class Events implements Listener {
     public void onEntityChanges(final EntityChangeBlockEvent entityChangeBlockEvent) {
         if (entityChangeBlockEvent.getEntity() instanceof org.bukkit.entity.FallingBlock)
             entityChangeBlockEvent.setCancelled(true);
+    }
+
+    @EventHandler
+    public void onBlockFade(final BlockFadeEvent blockFadeEvent) {
+        if (blockFadeEvent.getBlock().getType() == Material.FIRE) {
+            blockFadeEvent.setCancelled(true);
+        }
     }
 
 }
