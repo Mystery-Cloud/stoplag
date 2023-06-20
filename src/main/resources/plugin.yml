@@ -1,0 +1,5 @@
+name: StopLag
+author: Elias Krapf
+version: 1.0
+main: eu.mysterycloud.Main
+commands:
